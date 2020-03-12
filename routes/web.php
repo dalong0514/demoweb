@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', 'StaticPagesController@home');
+Route::get('/', 'StaticPagesController@home')->name('home');
 // Route::get('/', function () {
 //     return view('StaticPagesController@home');
 // });
-Route::get('/help', function () {
-    return view('StaticPagesController@help');
-});
-Route::get('/about', function () {
-    return view('StaticPagesController@about');
-});
+Route::get('/help', 'StaticPagesController@help')->name('help');
+// Route::get('/help', function () {
+//     return view('StaticPagesController@help');
+// });
+Route::get('/about', 'StaticPagesController@about')->name('about');
+// Route::get('/about', function () {
+//     return view('StaticPagesController@about');
+// });
+Route::get('signup', 'UserController@create')->name('signup');
